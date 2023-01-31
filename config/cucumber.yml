@@ -1,0 +1,17 @@
+<%
+rerun = File.file?('rerun.txt') ? File.read('rerun.txt') : ''
+rerun = rerun.strip.gsub(/\s/, ' ')
+rerun_opts = rerun.empty? ? "--format #{ENV['CUCUMBER_FORMAT'] || 'progress'} features" : "--format #{ENV['CUCUMBER_FORMAT'] || 'pretty'} #{rerun}"
+restricted_tags = [
+  '@wip',
+  '@accessibility',
+  "@skip-#{ENV.fetch('TEST_ENV', 'local')}",
+  ENV['TEST_ENV'] == 'production' ? nil : '@skip-non-production'
+].compact.join(' and not ')
+std_opts = "--format #{ENV['CUCUMBER_FORMAT'] || 'pretty'} --strict --tags 'not #{restricted_tags}' --publish-quiet "
+accessibility_opts = "--format #{ENV['CUCUMBER_FORMAT'] || 'pretty'} --strict --tags '@accessibility' --publish-quiet "
+%>
+default: <%= std_opts %> features
+wip: --tags @wip:3 --wip features --publish-quiet
+rerun: <%= rerun_opts %> --format rerun --out rerun.txt --strict --tags 'not @wip'
+accessibility: <%= accessibility_opts %> features/accessibility

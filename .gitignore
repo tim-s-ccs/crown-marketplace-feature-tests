@@ -176,3 +176,6 @@ build-iPhoneSimulator/
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode,ruby,rails
+
+config/environment.*
+!config/environment.shared.yml
