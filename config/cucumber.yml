@@ -5,7 +5,7 @@ rerun_opts = rerun.empty? ? "--format #{ENV['CUCUMBER_FORMAT'] || 'progress'} fe
 restricted_tags = [
   '@wip',
   '@accessibility',
-  "@skip-#{ENV.fetch('TEST_ENV', 'local')}",
+  ENV['TEST_ENV'] == 'production' ? '@skip-production' : nil,
   ENV['TEST_ENV'] == 'production' ? nil : '@skip-non-production'
 ].compact.join(' and not ')
 std_opts = "--format #{ENV['CUCUMBER_FORMAT'] || 'pretty'} --strict --tags 'not #{restricted_tags}' --publish-quiet "
