@@ -1,4 +1,4 @@
-​​# Crown Marketplace Legacy - Feature tests
+# Crown Marketplace Legacy - Feature tests
 
 This repository contains feature tests for the [Crown Marketplace Legacy][] which can be run in non development environments.
 
