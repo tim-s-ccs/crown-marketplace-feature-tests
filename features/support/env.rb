@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
-# require 'cucumber/rails'
 require 'cucumber/rspec/doubles'
 require 'capybara'
 require 'capybara/cucumber'
 require 'capybara/rspec'
 require 'selenium-webdriver'
 require 'site_prism'
-# require 'axe-capybara'
-# require 'axe-cucumber-steps'
+require 'axe-capybara'
+require 'axe-cucumber-steps'
 require 'byebug'
 
 # Allows us to use site prism in our tests
