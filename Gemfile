@@ -10,6 +10,9 @@ group :cucumber do
   gem 'rspec', '~> 3.12.0'
   gem 'selenium-webdriver', '~> 4.8.0'
   gem 'site_prism', '~> 3.7.0'
+
+  gem 'axe-core-capybara', '>= 4.2.1'
+  gem 'axe-core-cucumber', '>= 4.2.1'
 end
 
 group :development do

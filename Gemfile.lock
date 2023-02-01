@@ -4,6 +4,20 @@ GEM
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
+    axe-core-api (4.6.0)
+      dumb_delegator
+      virtus
+    axe-core-capybara (4.6.0)
+      axe-core-api
+      dumb_delegator
+    axe-core-cucumber (4.6.0)
+      axe-core-api
+      dumb_delegator
+      virtus
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (3.38.0)
@@ -15,6 +29,8 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
     cucumber (8.0.0)
       builder (~> 3.2, >= 3.2.4)
       cucumber-ci-environment (~> 9.0, >= 9.0.4)
@@ -39,8 +55,12 @@ GEM
       cucumber-messages (~> 18.0, >= 18.0.0)
     cucumber-messages (18.0.0)
     cucumber-tag-expressions (4.1.0)
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.5.0)
+    dumb_delegator (1.0.0)
     ffi (1.15.5)
+    ice_nine (0.11.2)
     json (2.6.3)
     matrix (0.4.2)
     mime-types (3.4.1)
@@ -106,7 +126,12 @@ GEM
     site_prism-all_there (0.3.2)
     sys-uname (1.2.2)
       ffi (~> 1.1)
+    thread_safe (0.3.6)
     unicode-display_width (2.4.2)
+    virtus (2.0.0)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
     websocket (1.2.9)
     xpath (3.2.0)
       nokogiri (~> 1.8)
@@ -117,6 +142,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  axe-core-capybara (>= 4.2.1)
+  axe-core-cucumber (>= 4.2.1)
   byebug (~> 11.1)
   capybara (~> 3.38.0)
   cucumber (~> 8.0.0)
