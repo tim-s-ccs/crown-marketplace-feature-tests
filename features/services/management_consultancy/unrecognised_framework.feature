@@ -25,6 +25,7 @@ Feature: Management Consultancy - Start pages - With an unrecognised framework
     Then I am on '/management-consultancy/RM6187/admin/sign-in'
     And the framework is 'RM6187'
 
+  @skip-production
   Scenario: Go to an unrecognised famework in the admin section - logged in
     Given I sign in as an admin for the 'RM6187' framework in 'management consultancy'
     Then I am on the 'Manage supplier data' page
