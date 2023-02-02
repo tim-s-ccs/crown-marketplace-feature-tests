@@ -66,3 +66,10 @@ Feature: Management Consultancy - Suppliers
     Then I am on the 'Download the supplier shortlist' page
     And I click on 'Download supplier shortlist'
     Then the spreadsheet 'shortlist_of_management_consultancy_suppliers' is downloaded
+
+  @file-download
+  Scenario: Download the expression of interest template
+    Given I click on 'Download the supplier list'
+    Then I am on the 'Download the supplier shortlist' page
+    And I click on 'Expression of interest template'
+    Then the open document 'T1-Expression-of-Interest-2.odt' is downloaded
