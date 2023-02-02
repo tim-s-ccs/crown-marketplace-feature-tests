@@ -60,6 +60,14 @@ users:
 
 If you do not have any authentication details, speak to a developer on the project and they should be able to provide you with some.
 
+### Test data
+
+Some of the features will check the supplier results and so assume that the test data has been loaded into the system.
+You can find the test data in the [`data/`][data folder] folder.
+
+This data should never be uploaded to production.
+We use [tags][] to make sure that only features that do not require test data are run on production.
+
 ## Running the features
 
 To run all the tests use the command
@@ -135,6 +143,8 @@ Once all these have passed, and the PR has been reviewed and approved by another
 [Crown Marketplace Legacy]: https://github.com/Crown-Commercial-Service/crown-marketplace-legacy
 [Cucumber]: https://cucumber.io/
 [Capybara]: https://github.com/teamcapybara/capybara
+[data folder]: https://github.com/tim-s-ccs/crown-marketplace-legacy-feature-tests/blob/main/data
+[tags]: #profiles-and-tags
 [accessibility features]: #accessibility-features
 [Axe Cucumber]: https://www.deque.com/axe/
 [rubocop]: https://github.com/rubocop-hq/rubocop

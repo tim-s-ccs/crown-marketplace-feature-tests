@@ -49,9 +49,9 @@ Then('I should see that {string} company can provide consultants') do |_number_o
   expect(journey_page.number_of_companies).to have_content '1 company can provide consultants that meet your requirements'
 end
 
-# Then('I should see that {string} suppliers can provide legal services') do |number_of_suppliers|
-#   expect(journey_page.number_of_suppliers).to have_content "#{number_of_suppliers} suppliers can provide legal services that meet your requirements."
-# end
+Then('I should see that {string} suppliers can provide legal services') do |number_of_suppliers|
+  expect(journey_page.number_of_suppliers).to have_content "#{number_of_suppliers} suppliers can provide legal services that meet your requirements."
+end
 
 Then('the selected suppliers are:') do |suppliers|
   supplier_elements = journey_page.suppliers
@@ -64,16 +64,16 @@ Then('the selected suppliers are:') do |suppliers|
   end
 end
 
-# Then('the selected legal service suppliers are:') do |suppliers|
-#   supplier_element_names = journey_page.suppliers.map(&:text).sort
-#   supplier_names = suppliers.raw.flatten
+Then('the selected legal service suppliers are:') do |suppliers|
+  supplier_element_names = journey_page.suppliers.map(&:text).sort
+  supplier_names = suppliers.raw.flatten
 
-#   expect(supplier_element_names.length).to eq supplier_names.length
+  expect(supplier_element_names.length).to eq supplier_names.length
 
-#   supplier_element_names.zip(supplier_names).each do |actual, expected|
-#     expect(actual).to have_content expected
-#   end
-# end
+  supplier_element_names.zip(supplier_names).each do |actual, expected|
+    expect(actual).to have_content expected
+  end
+end
 
 Then('I deselect all the items') do
   journey_page.selection.checkboxes.map(&:uncheck)
@@ -98,32 +98,45 @@ Then('the contact details for the supplier are:') do |contact_details|
   end
 end
 
-# Then('the {string} hourly rate is {string}') do |role, hourly_rate|
-#   table_row = journey_page.supplier_rates_table.rows[LS_RM6240_ROLES.index(role)]
+Then('the {string} hourly rate is {string}') do |role, hourly_rate|
+  table_row = journey_page.supplier_rates_table.rows[LS_RM6240_ROLES.index(role)]
 
-#   expect(table_row.rate).to have_content(hourly_rate)
-# end
+  expect(table_row.rate).to have_content(hourly_rate)
+end
 
-# Then('there is no LMP \(Legal project manager) hourly rate') do
-#   expect(journey_page.supplier_rates_table.rows.length).to eq(6)
-# end
+Then('there is no LMP \(Legal project manager) hourly rate') do
+  expect(journey_page.supplier_rates_table.rows.length).to eq(6)
+end
 
 Then('there are suppliers who can offer consultants and I count them') do
   expect(journey_page.number_of_companies.text.match(/\d+/).to_s.to_i).to be_positive
   @number_of_companies = journey_page.number_of_companies.text
 end
 
-Then('I click on the first consultant') do
+Then('there are suppliers who can offer legal services and I count them') do
+  expect(journey_page.number_of_suppliers.text.match(/\d+/).to_s.to_i).to be_positive
+  @number_of_suppliers = journey_page.number_of_suppliers.text
+end
+
+Then('I click on the first supplier') do
   journey_page.suppliers.first.click
 end
 
-Then('I am on the day rate page') do
+Then('I am on the management consultancy day rates page') do
   expect(journey_page.day_rate_page_title).to have_content('Maximum day rates')
 end
 
-Then('I should see the same number of suppliers that I counted previously') do
+Then('I am on the legal services rates page') do
+  expect(journey_page.day_rate_page_title).to have_content('Rates')
+end
+
+Then('I should see the same number of consultants that I counted previously') do
   expect(journey_page.number_of_companies).to have_content @number_of_companies
 end
 
+Then('I should see the same number of legal services that I counted previously') do
+  expect(journey_page.number_of_suppliers).to have_content @number_of_suppliers
+end
+
 MC_ROLES = ['Analyst / Junior Consultant', 'Consultant', 'Senior Consultant / Engagement Manager / Project Lead', 'Principal Consultant / Associate Director', 'Managing Consultant / Director', 'Partner'].freeze
-# LS_RM6240_ROLES = ['Partner', 'Senior Solicitor, Senior Associate', 'Solicitor, Associate', 'NQ Solicitor/Associate, Junior Solicitor/Associate', 'Trainee', 'Paralegal, Legal Assistant', 'LMP (Legal project manager)'].freeze
+LS_RM6240_ROLES = ['Partner', 'Senior Solicitor, Senior Associate', 'Solicitor, Associate', 'NQ Solicitor/Associate, Junior Solicitor/Associate', 'Trainee', 'Paralegal, Legal Assistant', 'LMP (Legal project manager)'].freeze
