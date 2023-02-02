@@ -106,9 +106,9 @@ Given('I click on the {string} back link') do |link_text|
   page.find('.govuk-back-link', text: link_text).click
 end
 
-# Then('I click on the {string} button') do |button_text|
-#   page.find('.govuk-button', text: button_text).click
-# end
+Then('I click on the {string} button') do |button_text|
+  page.find('.govuk-button', text: button_text).click
+end
 
 Then('the spreadsheet {string} is downloaded') do |spreadsheet_name|
   if Capybara.current_driver == :selenium

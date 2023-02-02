@@ -18,8 +18,8 @@ Feature: Management Consultancy - Suppliers - Accessibility
     Then the page should be axe clean
 
   Scenario: Supplier page
-    And I click on the first consultant
-    Then I am on the day rate page
+    And I click on the first supplier
+    Then I am on the management consultancy day rates page
     And the sub title is 'MCF3 lot 1 - Business'
     And I click on the 'Back' back link
     Then the page should be axe clean
