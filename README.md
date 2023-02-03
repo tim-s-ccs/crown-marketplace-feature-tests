@@ -105,7 +105,7 @@ The reason we have special tags for production is that the features assume that 
 As we cannot use test data in production we use `@skip-production` tag to mark tests we know will not work in production.
 
 Because we know some features will not work, there are some extra features that exist to be used when running tests on production.
-As the other environments do not need to run these features, we use the `@skip-non-production` to skip them.
+As the other environments do not need to run these features, the functionality will have already been covered in other features, we use the `@skip-non-production` tag to skip them.
 
 ### Accessibility features
 

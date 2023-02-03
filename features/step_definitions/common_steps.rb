@@ -63,9 +63,9 @@ rescue NoMethodError
   expect(page.find('h1')).to have_content(title)
 end
 
-# Then('the caption is {string}') do |caption|
-#   expect(page.find('span[class*=govuk-caption]')).to have_content(caption)
-# end
+Then('the caption is {string}') do |caption|
+  expect(page.find('span[class*=govuk-caption]')).to have_content(caption)
+end
 
 When('I click on {string}') do |button_text|
   click_on(button_text)
@@ -111,15 +111,17 @@ Then('I click on the {string} button') do |button_text|
 end
 
 Then('the spreadsheet {string} is downloaded') do |spreadsheet_name|
-  if Capybara.current_driver == :selenium
-    download_file_name = DownloadHelpers.download_file_name
+  download_file_name = DownloadHelpers.download_file_name
 
-    expect(download_file_name).to start_with(spreadsheet_name)
-    expect(download_file_name).to end_with('.xlsx')
-  else
-    expect(page.response_headers['Content-Type']).to eq 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-    expect(page.response_headers['Content-Disposition']).to include "filename=\"#{spreadsheet_name}".gsub('(', '%28').gsub(')', '%29')
-  end
+  expect(download_file_name).to start_with(spreadsheet_name)
+  expect(download_file_name).to end_with('.xlsx')
+end
+
+Then('the open document {string} is downloaded') do |open_document_name|
+  download_file_name = DownloadHelpers.download_file_name
+
+  expect(download_file_name).to start_with(open_document_name)
+  expect(download_file_name).to end_with('.odt')
 end
 
 Then('the framework is {string}') do |framework|

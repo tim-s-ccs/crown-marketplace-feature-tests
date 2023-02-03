@@ -9,11 +9,15 @@ require 'site_prism'
 require 'axe-capybara'
 require 'axe-cucumber-steps'
 require 'byebug'
+require 'active_support/all'
 
 # Allows us to use site prism in our tests
 require_relative '../support/pages'
 
 World(Pages)
+
+# Set the time zone
+Time.zone = 'London'
 
 # We can set the config from the environments.<ENV>.yml file
 test_env = ENV.fetch('TEST_ENV', 'local')

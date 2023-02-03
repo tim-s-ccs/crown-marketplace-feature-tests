@@ -1,5 +1,3 @@
-# Because we can't use production data in the tests (which includes the supplier names),
-# This feature checks that we can navigate to the relevent pages for each lot.
 @skip-non-production
 Feature: Legal services - Non central governemnt - Results
 
