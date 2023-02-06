@@ -110,18 +110,11 @@ Then('I click on the {string} button') do |button_text|
   page.find('.govuk-button', text: button_text).click
 end
 
-Then('the spreadsheet {string} is downloaded') do |spreadsheet_name|
+Then('the file {string} is downloaded with the {string} extension') do |filename, file_extension|
   download_file_name = DownloadHelpers.download_file_name
 
-  expect(download_file_name).to start_with(spreadsheet_name)
-  expect(download_file_name).to end_with('.xlsx')
-end
-
-Then('the open document {string} is downloaded') do |open_document_name|
-  download_file_name = DownloadHelpers.download_file_name
-
-  expect(download_file_name).to start_with(open_document_name)
-  expect(download_file_name).to end_with('.odt')
+  expect(download_file_name).to start_with(filename)
+  expect(download_file_name).to end_with(".#{file_extension}")
 end
 
 Then('the framework is {string}') do |framework|

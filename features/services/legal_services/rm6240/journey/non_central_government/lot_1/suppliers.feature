@@ -73,4 +73,4 @@ Feature: Legal services - Non central governemnt - Lot 1 - Suppliers
     Given I click on 'Download the supplier list'
     Then I am on the 'Download the supplier shortlist' page
     And I click on 'Download supplier shortlist'
-    Then the spreadsheet 'Shortlist of WPS Legal Services Suppliers.xlsx' is downloaded
+    Then the file 'Shortlist of WPS Legal Services Suppliers' is downloaded with the 'xlsx' extension

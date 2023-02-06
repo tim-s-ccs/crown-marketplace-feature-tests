@@ -37,7 +37,7 @@ Feature: Supply Teachers - Agency results - Nominated worker - Agencies - Produc
   @file-download
   Scenario: I can download the shortlist document
     And I click on 'Download shortlist of agencies'
-    Then the spreadsheet 'Shortlist of agencies' is downloaded
+    Then the file 'Shortlist of agencies' is downloaded with the 'xlsx' extension
 
   Scenario: Back buttons work
     Given I click on agency number 1
