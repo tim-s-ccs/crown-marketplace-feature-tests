@@ -2,6 +2,9 @@ Given('I sign in and navigate to the start page for the {string} framework in {s
   start_page_title = ''
 
   case service
+  when 'facilities management'
+    start_page_title = ENV.fetch('BUYER_EMAIL', nil)
+    visit "/facilities-management/#{framework}/sign-in"
   when 'legal services'
     start_page_title = 'Do you work for central government?'
     visit "/legal-services/#{framework}/sign-in"
@@ -22,6 +25,8 @@ end
 
 When('I go to the {string} start page for {string}') do |service, framework|
   case service
+  when 'facilities management'
+    visit "/facilities-management/#{framework}"
   when 'legal services'
     visit "/legal-services/#{framework}"
   when 'management consultancy'
@@ -35,6 +40,9 @@ Given('I sign in as an admin for the {string} framework in {string}') do |framew
   admin_dashboard_title = ''
 
   case service
+  when 'facilities management'
+    admin_dashboard_title = 'RM6232 administration dashboard'
+    visit "/facilities-management/#{framework}/admin/sign-in"
   when 'legal services'
     admin_dashboard_title = 'Manage supplier data'
     visit "/legal-services/#{framework}/admin/sign-in"
