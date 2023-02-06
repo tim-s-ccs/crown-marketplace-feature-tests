@@ -85,6 +85,12 @@ Then('I sign in') do
   click_on 'Sign in'
 end
 
+Then('I sign in without details') do
+  fill_in 'email', with: ENV.fetch('BUYER_NO_DETAILS_EMAIL', nil)
+  fill_in 'password', with: ENV.fetch('BUYER_NO_DETAILS_PASSWORD', nil)
+  click_on 'Sign in'
+end
+
 Then('I should see the following error messages:') do |table|
   expect(page).to have_css('div.govuk-error-summary')
   expect(page.find('.govuk-error-summary__list').find_all('a').map(&:text).reject(&:empty?)).to eq table.raw.flatten

@@ -40,6 +40,10 @@ Then('I choose to {string} {string} cookies') do |option, cookie|
   end
 end
 
+Then('there are no header navigation links') do
+  expect(home_page.navigation.links).to be_empty
+end
+
 Then('I should see the following navigation links:') do |navigation_links|
   home_page.navigation.links.zip(navigation_links.raw.flatten).each do |actual, expected|
     expect(actual).to have_content expected
