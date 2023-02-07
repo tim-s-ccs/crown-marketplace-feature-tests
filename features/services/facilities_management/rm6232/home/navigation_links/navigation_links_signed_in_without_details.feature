@@ -1,4 +1,4 @@
-Feature: Navigation links when signed in - without buyer details
+Feature: Facilities Management - Navigation links when signed in - without buyer details
 
   Background: I navigate to manage my details
     Given I sign in without details for facilities management

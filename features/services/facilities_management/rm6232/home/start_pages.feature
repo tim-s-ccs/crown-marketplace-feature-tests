@@ -1,5 +1,4 @@
-@pipeline
-Feature: Start pages
+Feature:  Facilities Management - Start pages
 
   Scenario: Buyer sees start page
     When I go to the 'facilities management' start page for 'RM6232'

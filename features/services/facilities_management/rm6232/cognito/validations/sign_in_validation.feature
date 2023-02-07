@@ -1,4 +1,4 @@
-Feature: Sign in to my account - Facilities Management - RM6232 - Validations
+Feature: Facilities Management - Sign in to my account - Facilities Management - RM6232 - Validations
 
   Background: Navigate to the sign in page
     When I go to the 'facilities management' start page for 'RM6232'

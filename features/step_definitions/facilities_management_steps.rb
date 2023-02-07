@@ -22,3 +22,11 @@ end
 Then('I want to change my address') do
   facilities_management_page.find_address.change_address.click
 end
+
+Given('I check {string} for the sector') do |option|
+  facilities_management_page.sector.send(option.to_sym).choose
+end
+
+Then('I should see the postcode error message for buyer details') do
+  expect(facilities_management_page.postcode_error_message).to have_text('Enter a valid postcode, for example SW1A 1AA')
+end

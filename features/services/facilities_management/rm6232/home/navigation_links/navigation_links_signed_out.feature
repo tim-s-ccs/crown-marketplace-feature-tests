@@ -1,4 +1,4 @@
-Feature: Navigation links when signed out
+Feature: Facilities Management - Navigation links when signed out
 
   Background: I navigate to the start page
     When I go to the 'facilities management' start page for 'RM6232'

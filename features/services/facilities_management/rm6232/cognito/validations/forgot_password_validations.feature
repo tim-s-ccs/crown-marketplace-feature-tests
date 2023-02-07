@@ -1,4 +1,4 @@
-Feature: Forgot my password - Management Consultancy - RM6232 - Validations
+Feature: Facilities Management - Forgot my password - Management Consultancy - RM6232 - Validations
 
   Scenario Outline: I forgot my password - email invalid
     When I go to the 'facilities management' start page for 'RM6232'

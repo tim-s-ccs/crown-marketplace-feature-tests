@@ -1,4 +1,4 @@
-Feature: Navigation links when signed in
+Feature: Facilities Management - Navigation links when signed in
 
   Background: I navigate to my account page
     Given I sign in and navigate to the start page for the 'RM6232' framework in 'facilities management'
@@ -92,6 +92,7 @@ Feature: Navigation links when signed in
       | Sign out    |
     And I click on 'My account'
     And I am on the Your account page
+
   Scenario: Procurement dashboard - Sign out
     Then I click on 'View your saved searches'
     Then I am on the 'Saved searches' page
