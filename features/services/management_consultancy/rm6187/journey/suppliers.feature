@@ -65,11 +65,11 @@ Feature: Management Consultancy - Suppliers
     Given I click on 'Download the supplier list'
     Then I am on the 'Download the supplier shortlist' page
     And I click on 'Download supplier shortlist'
-    Then the spreadsheet 'shortlist_of_management_consultancy_suppliers' is downloaded
+    Then the file 'shortlist_of_management_consultancy_suppliers' is downloaded with the 'xlsx' extension
 
   @file-download
   Scenario: Download the expression of interest template
     Given I click on 'Download the supplier list'
     Then I am on the 'Download the supplier shortlist' page
     And I click on 'Expression of interest template'
-    Then the open document 'T1-Expression-of-Interest-2.odt' is downloaded
+    Then the file 'T1-Expression-of-Interest-2' is downloaded with the 'odt' extension
