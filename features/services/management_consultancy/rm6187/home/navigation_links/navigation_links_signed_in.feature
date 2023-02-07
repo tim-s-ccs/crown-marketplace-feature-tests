@@ -3,6 +3,7 @@ Feature: Management Consultancy - Navigation links when signed in
   Background: I navigate to the start page
      Given I sign in and navigate to the start page for the 'RM6187' framework in 'management consultancy'
 
+  @smoulder
   Scenario: Start page
     When I go to the 'management consultancy' start page for 'RM6187'
     And I should see the following navigation links:

@@ -18,6 +18,7 @@ Feature: Supply Teachers - FTA to perm - results
     And I click on 'Check another fixed term contract'
     And I am on the 'What date did the workers fixed term contract start?' page
 
+  @smoulder
   Scenario: Contract ended after 6 months and the length is more then tweleve months
     And I enter a date 1 years and 8 months into the past
     And I click on 'Continue'
@@ -57,6 +58,7 @@ Feature: Supply Teachers - FTA to perm - results
     And I click on 'Check another fixed term contract'
     And I am on the 'What date did the workers fixed term contract start?' page
 
+  @smoulder
   Scenario: I can view the rate at which I will be charged
     And I enter a date 0 years and 6 months into the past
     And I click on 'Continue'

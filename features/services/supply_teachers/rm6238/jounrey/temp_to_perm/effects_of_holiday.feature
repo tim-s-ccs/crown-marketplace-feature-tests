@@ -40,6 +40,7 @@ Feature: Supply Teachers - Temp to perm - Effects of holiday
     Then I am on the 'Temp-to-perm fee' page
     And my temp to perm fee is '£800.00'
 
+  @smoulder
   Scenario: Adding two seperate weeks of holiday has the same affect as reducing the hire date by two weeks
     Given I enter '01/03/2021' for the 'holiday 1 start' date
     And I enter '07/03/2021' for the 'holiday 1 end' date

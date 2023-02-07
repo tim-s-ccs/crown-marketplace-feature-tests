@@ -26,7 +26,7 @@ Feature: Supply Teachers - Education technology platforms
     And I click on 'Back'
     Then I am on the 'What is your school looking for?' page
 
-  @skip-non-production
+  @skip-non-production @smoulder
   Scenario: Education technology platform results - Production
     And there are multiple managed service provider agencies
     And the first supplier has contact details

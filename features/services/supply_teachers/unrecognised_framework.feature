@@ -7,7 +7,8 @@ Feature: Supply Teachers - Start pages - With an unrecognised framework
     And I click on 'RM6238'
     Then I am on the 'Find supply teachers and agency workers' page
     And the framework is 'RM6238'
-  
+
+  @smoulder
   Scenario: Go to unrecognised famework in the buyer section - logged out
     Given I sign in and navigate to the start page for the 'RM6238' framework in 'supply teachers'
     And I go to the 'supply teachers' start page for 'RM0172'

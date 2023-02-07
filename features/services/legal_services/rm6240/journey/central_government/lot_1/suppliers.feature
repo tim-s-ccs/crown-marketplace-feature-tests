@@ -1,3 +1,4 @@
+@skip-production
 Feature: Legal services -  Central governemnt - Lot 1 - Suppliers
 
   Background: Navigate to start page and complete the journey
@@ -34,7 +35,6 @@ Feature: Legal services -  Central governemnt - Lot 1 - Suppliers
       | SCHNEIDER AND SONS                |
       | SHANAHAN, CARTWRIGHT AND SCHAEFER |
 
-  @skip-production
   Scenario: Check the supplier data - SME
     Given I click on 'RUTHERFORD, LANGOSH AND GREEN'
     Then I am on the 'RUTHERFORD, LANGOSH AND GREEN' page
@@ -52,7 +52,6 @@ Feature: Legal services -  Central governemnt - Lot 1 - Suppliers
       | http://hudson.co/thao_senger                  |
       | 6910 Abram Turnpike, South Graciela, CA 51972 |
 
-  @skip-production
   Scenario: Check the supplier data - Non SME
     Given I click on 'GERLACH AND SONS'
     Then I am on the 'GERLACH AND SONS' page

@@ -6,13 +6,14 @@ Feature: Sign in to my account - Legal Services - RM6240 - Validations
     When I click on 'Start now'
     And I am on the 'Sign in to your legal services account' page
 
+  @smoulder
   Scenario: I sign in to my account - missing parameters
     And I click on 'Sign in'
     Then I should see the following error messages:
       | You must provide your email address in the correct format, like name@example.com  |
       | You must provide your password                                                    |
       
-    Scenario Outline: I sign in to my account - email format wrong
+  Scenario Outline: I sign in to my account - email format wrong
     And I enter the following details into the form:
       | Email     | <email>  |
       | Password  | ValidPassword1! |

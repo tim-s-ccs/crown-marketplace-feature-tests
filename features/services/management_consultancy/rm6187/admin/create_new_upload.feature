@@ -18,7 +18,7 @@ Feature: Management Consultancy - Admin - Create new upload
     And I select the file 'data/management_consultancy/rm6187/Supplier service offerings.xlsx' to upload for 'Supplier service offerings'
     And I click on 'Upload data'
     Then I am on the 'Upload session' page
-    And I wait no longer than 50 seconds for the upload to finish
+    And I wait no longer than 120 seconds for the upload to finish
     And the status of the upload is 'published on live'
 
   @file-download

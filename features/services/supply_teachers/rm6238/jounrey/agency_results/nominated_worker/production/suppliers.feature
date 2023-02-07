@@ -14,6 +14,7 @@ Feature: Supply Teachers - Agency results - Nominated worker - Agencies - Produc
     Then I am on the 'Agency results' page
     And there are multiple agencies and I record them
 
+  @smoulder
   Scenario: I can naviagte to the agency details
     Given I click on agency number 1
     Then I am on that agencies page
@@ -34,7 +35,7 @@ Feature: Supply Teachers - Agency results - Nominated worker - Agencies - Produc
       | Nominated Worker                                                                      | £ |
       | Fixed Term                                                                            | % |
 
-  @file-download
+  @file-download @smoulder
   Scenario: I can download the shortlist document
     And I click on 'Download shortlist of agencies'
     Then the file 'Shortlist of agencies' is downloaded with the 'xlsx' extension

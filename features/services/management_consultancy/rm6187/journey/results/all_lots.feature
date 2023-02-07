@@ -6,6 +6,7 @@ Feature: Management Consultancy - Results
     And I click on 'Continue'
     Then I am on the 'Select the lot you need' page
 
+  @file-download @smoulder
   Scenario: Can view results of the services - Lot 1 - Business
     Given I select 'Lot 1 - Business'
     And I click on 'Continue'
@@ -23,6 +24,10 @@ Feature: Management Consultancy - Results
     And I should see the same number of consultants that I counted previously
     And I click on 'Download the supplier list'
     Then I am on the 'Download the supplier shortlist' page
+    And I click on 'Download supplier shortlist'
+    Then the file 'shortlist_of_management_consultancy_suppliers' is downloaded with the 'xlsx' extension
+    And I click on 'Expression of interest template'
+    Then the file 'T1-Expression-of-Interest-2' is downloaded with the 'odt' extension
     And I click on the 'Back' back link
     Then I am on the 'Supplier results' page
     And I should see the same number of consultants that I counted previously
@@ -69,6 +74,7 @@ Feature: Management Consultancy - Results
     Then I am on the 'Supplier results' page
     And I should see the same number of consultants that I counted previously
 
+  @smoulder
   Scenario: Can view results of the services - Lot 4 - Finance
     Given I select 'Lot 4 - Finance'
     And I click on 'Continue'
@@ -132,6 +138,7 @@ Feature: Management Consultancy - Results
     Then I am on the 'Supplier results' page
     And I should see the same number of consultants that I counted previously
 
+  @smoulder
   Scenario: Can view results of the services - Lot 7 - Health, Social Care and Community
     Given I select 'Lot 7 - Health, Social Care and Community'
     And I click on 'Continue'

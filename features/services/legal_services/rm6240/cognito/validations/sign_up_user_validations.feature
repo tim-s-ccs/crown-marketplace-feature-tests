@@ -8,6 +8,7 @@ Feature: Sign up user - Legal Services - RM6240 - Validations
     And I click on 'Create an account'
     Then I am on the 'Create a CCS account' page
 
+  @smoulder
   Scenario: Email validations
     Given I enter '<email>' for my email
     And I enter 'Passowrd1!' for the password
@@ -21,6 +22,7 @@ Feature: Sign up user - Legal Services - RM6240 - Validations
       |                             | Enter an email address in the correct format, like name@example.com |
       | Test@crowncommercial.gov.uk | Email address cannot contain any capital letters                    |
 
+  @smoulder
   Scenario: Not on allow list
     Given I enter 'test@tmail.com' for my email
     And I enter 'Passowrd1!' for the password

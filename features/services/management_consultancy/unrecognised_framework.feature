@@ -8,6 +8,7 @@ Feature: Management Consultancy - Start pages - With an unrecognised framework
     Then I am on the 'Find management consultants' page
     And the framework is 'RM6187'
 
+  @smoulder
   Scenario: Go to unrecognised famework in the buyer section - logged out
     Given I sign in and navigate to the start page for the 'RM6187' framework in 'management consultancy'
     And I go to the 'management consultancy' start page for 'RM9812'

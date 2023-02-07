@@ -1,4 +1,4 @@
-@skip-non-production
+@file-download @skip-non-production @smoulder
 Feature: Legal services - Non central governemnt - Results
 
   Background: Navigate to the select lot page
@@ -29,6 +29,8 @@ Feature: Legal services - Non central governemnt - Results
     And I should see the same number of legal services that I counted previously
     And I click on 'Download the supplier list'
     Then I am on the 'Download the supplier shortlist' page
+    And I click on 'Download supplier shortlist'
+    Then the file 'Shortlist of WPS Legal Services Suppliers' is downloaded with the 'xlsx' extension
     And I click on the 'Back' back link
     Then I am on the 'Supplier results' page
     And I should see the same number of legal services that I counted previously
@@ -54,6 +56,8 @@ Feature: Legal services - Non central governemnt - Results
     And I should see the same number of legal services that I counted previously
     And I click on 'Download the supplier list'
     Then I am on the 'Download the supplier shortlist' page
+    And I click on 'Download supplier shortlist'
+    Then the file 'Shortlist of WPS Legal Services Suppliers' is downloaded with the 'xlsx' extension
     And I click on the 'Back' back link
     Then I am on the 'Supplier results' page
     And I should see the same number of legal services that I counted previously
@@ -71,6 +75,8 @@ Feature: Legal services - Non central governemnt - Results
     And I should see the same number of legal services that I counted previously
     And I click on 'Download the supplier list'
     Then I am on the 'Download the supplier shortlist' page
+    And I click on 'Download supplier shortlist'
+    Then the file 'Shortlist of WPS Legal Services Suppliers' is downloaded with the 'xlsx' extension
     And I click on the 'Back' back link
     Then I am on the 'Supplier results' page
     And I should see the same number of legal services that I counted previously

@@ -9,6 +9,7 @@ Feature: Supply Teachers - Temp to perm - Results
     And I enter '5' for the 'days per week'
     And I enter '25.50' for the 'daily fee'
 
+  @smoulder
   Scenario: Hiring after 12 weeks - no notice
     Given I enter '12/12/2021' for the 'hire' date
     And I click on 'Continue'
@@ -34,6 +35,7 @@ Feature: Supply Teachers - Temp to perm - Results
       | but you’re not giving 4 working weeks’ notice, so you can be charged a fee.                         |
       | Notice period given: 3 working days between Wednesday 08 December 2021 and Sunday 12 December 2021  |
 
+  @smoulder
   Scenario: Hiring after 12 weeks - enough notice
     Given I enter '12/12/2021' for the 'hire' date
     Given I enter '11/11/2021' for the 'notice' date
@@ -63,6 +65,7 @@ Feature: Supply Teachers - Temp to perm - Results
       | and are not giving 4 working weeks’ notice, so you can be charged a fee.                                |
       | Notice period given: 7 working days between Thursday 10 June 2021 and Saturday 19 June 2021             |
 
+  @smoulder
   Scenario: Hiring between 9 and 12 weeks - enough notice
     Given I enter '19/06/2021' for the 'hire' date
     Given I enter '10/05/2021' for the 'notice' date

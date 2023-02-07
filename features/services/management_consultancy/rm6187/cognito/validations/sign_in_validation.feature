@@ -6,6 +6,7 @@ Feature: Sign in to my account - Management Consultancy - RM6187 - Validations
     When I click on 'Start now'
     And I am on the 'Sign in to your management consultancy account' page
 
+  @smoulder
   Scenario: I sign in to my account - missing parameters
     And I click on 'Sign in'
     Then I should see the following error messages:

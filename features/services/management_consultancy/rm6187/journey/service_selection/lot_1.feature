@@ -26,6 +26,7 @@ Feature: Management Consultancy - Lot 1 - Business - Service selection
       | Digital, technology and cyber                         |
       | Forecasting and/or planning                           |
 
+  @smoulder
   Scenario: Service selection appears in basked
     Then the basket should say 'No services selected'
     And the remove all link should 'not be' visible

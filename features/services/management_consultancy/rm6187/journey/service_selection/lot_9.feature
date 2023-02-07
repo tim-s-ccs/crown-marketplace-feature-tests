@@ -114,6 +114,7 @@ Feature: Management Consultancy - Lot 9 - Environmental Sustainability and Socio
     When I click on 'Remove all'
     Then the basket should say 'No services selected'
 
+  @smoulder
   Scenario: Go back from supplier results and change selection
     When I check the following items:
       | Air quality                                 |
