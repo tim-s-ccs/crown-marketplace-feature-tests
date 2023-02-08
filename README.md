@@ -95,11 +95,12 @@ This is used to run our [accessibility features][] which we keep them separate f
 
 We also have some additional tags which are used during the setup of the `default` profile
 
-| Tag                   | Purpose                                                                                 |
-| --------------------- | --------------------------------------------------------------------------------------- |
-| @accessibility        | Marks a feature as an accessibility test and are not run as part of the default profile |
-| @skip-non-production  | Marks a feature to be skipped if `TEST_ENV` is not production                           |
-| @skip-production      | Marks a feature to be skipped if `TEST_ENV` is production                               |
+| Tag                   | Purpose                                                                                                     |
+| --------------------- | ----------------------------------------------------------------------------------------------------------- |
+| @accessibility        | Marks a feature as an accessibility test and are not run as part of the default profile                     |
+| @smoulder             | Used to mark a subset of the test that we can run after a release to make sure the applications are working |
+| @skip-non-production  | Marks a feature to be skipped if `TEST_ENV` is not production                                               |
+| @skip-production      | Marks a feature to be skipped if `TEST_ENV` is production                                                   |
 
 The reason we have special tags for production is that the features assume that test data is being used.
 As we cannot use test data in production we use `@skip-production` tag to mark tests we know will not work in production.
