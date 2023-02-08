@@ -3,6 +3,7 @@ Feature: Legal services - Jounrey validations
   Background: Navigate to start page
     Given I sign in and navigate to the start page for the 'RM6240' framework in 'legal services'
   
+  @smoulder
   Scenario: Do you work for central government validation
     Given I am on the 'Do you work for central government?' page
     When I click on 'Continue'
@@ -30,6 +31,7 @@ Feature: Legal services - Jounrey validations
     Then I should see the following error messages:
       | Select the lot you need |
 
+  @smoulder
   Scenario: Select the lot you need validations - central government no
     Given I am on the 'Do you work for central government?' page
     And I select 'No'
@@ -54,6 +56,7 @@ Feature: Legal services - Jounrey validations
     Then I should see the following error messages:
       | Select at least one legal service |
 
+  @smoulder
   Scenario: Select the legal services you need - central government no
     Given I am on the 'Do you work for central government?' page
     And I select 'No'
@@ -85,6 +88,7 @@ Feature: Legal services - Jounrey validations
     Then I should see the following error messages:
       | Select the jurisdiction you need |
 
+  @smoulder
   Scenario: Select the jurisdiction you need - central government no
     Given I am on the 'Do you work for central government?' page
     And I select 'No'

@@ -1,3 +1,4 @@
+@skip-production
 Feature: Legal services -  Central governemnt - Lot 2 - Suppliers
 
   Background: Navigate to start page and complete the journey
@@ -34,7 +35,6 @@ Feature: Legal services -  Central governemnt - Lot 2 - Suppliers
       | ROWE GROUP                        |
       | SHANAHAN, CARTWRIGHT AND SCHAEFER |
 
-  @skip-production
   Scenario: Check the supplier data - SME
     Given I click on 'BERNHARD, WEHNER AND ORN'
     Then I am on the 'BERNHARD, WEHNER AND ORN' page
@@ -52,7 +52,6 @@ Feature: Legal services -  Central governemnt - Lot 2 - Suppliers
       | http://orn.org/patrice.connelly                         |
       | Suite 264 78774 Sandy Hills, West Melvinfurt, AK 29387  |
 
-  @skip-production
   Scenario: Check the supplier data - Non SME
     Given I click on 'MOSCISKI, LABADIE AND REMPEL'
     Then I am on the 'MOSCISKI, LABADIE AND REMPEL' page

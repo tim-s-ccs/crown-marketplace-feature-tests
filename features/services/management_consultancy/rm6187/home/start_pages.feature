@@ -10,6 +10,7 @@ Feature: Management Consultancy - Start pages
     When I click on 'Start now'
     Then I am on the 'Sign in to your management consultancy account' page
 
+  @smoulder
   Scenario: Logging in
     When I go to the 'management consultancy' start page for 'RM6187'
     Then I am on the 'Find management consultants' page

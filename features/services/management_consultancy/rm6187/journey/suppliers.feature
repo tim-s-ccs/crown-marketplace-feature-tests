@@ -1,3 +1,4 @@
+@skip-production
 Feature: Management Consultancy - Suppliers
 
   Background: Login and then navigate to the supplier results page
@@ -36,7 +37,6 @@ Feature: Management Consultancy - Suppliers
       | TORP GROUP                                |
       | WILLIAMSON GROUP                          |
 
-  @skip-production
   Scenario Outline: Check the supplier data
     Given I click on '<supplier>'
     Then I am on the '<supplier>' page

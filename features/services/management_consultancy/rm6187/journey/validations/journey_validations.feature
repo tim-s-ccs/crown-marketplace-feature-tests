@@ -4,7 +4,8 @@ Feature: Management Consultancy - Jounrey validations
     Given I sign in and navigate to the start page for the 'RM6187' framework in 'management consultancy'
     And I click on 'Continue'
     Then I am on the 'Select the lot you need' page
-  
+
+  @smoulder
   Scenario: Select the lot you need validation
     When I click on 'Continue'
     Then I should see the following error messages:
@@ -29,3 +30,12 @@ Feature: Management Consultancy - Jounrey validations
       | Lot 7 - Health, Social Care and Community                           |
       | Lot 8 - Infrastructure including Transport                          |
       | Lot 9 - Environmental Sustainability and Socio-economic Development |
+
+  @skip-non-production @smoulder
+  Scenario: Select the services you need validation
+    Given I select 'Lot 1 - Business'
+    And I click on 'Continue'
+    Then I am on the 'Select the services you need' page
+    When I click on 'Continue'
+    Then I should see the following error messages:
+      | Select the service or services you need |

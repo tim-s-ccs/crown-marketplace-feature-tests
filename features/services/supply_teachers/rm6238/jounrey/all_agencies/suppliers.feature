@@ -5,10 +5,10 @@ Feature: Supply Teachers - All agencies - suppliers
     And I select "A list of all agencies"
     And I click on 'Continue'
     Then I am on the 'Find an agency' page
-    And a list of 10 agencies are shown
 
   @skip-production
   Scenario Outline: Can view supplier details
+    And a list of 10 agencies are shown
     Given I click on '<agency_name>'
     Then I am on the '<agency_name>' page
     And the sub title is Agency details
@@ -26,6 +26,7 @@ Feature: Supply Teachers - All agencies - suppliers
 
   @skip-production
   Scenario: Supplier details are correct
+    And a list of 10 agencies are shown
     Given I click on 'EMARD AND SONS'
     Then I am on the 'EMARD AND SONS' page
     And the sub title is Agency details
@@ -48,8 +49,9 @@ Feature: Supply Teachers - All agencies - suppliers
       | Merseyside  |
       | L4 0TH      |
 
-  @skip-non-production
+  @skip-non-production @smoulder
   Scenario: Can view a suppliers details
+    And multiple agencies are shown and I count them
     And I click on the first agency
     Then the sub title is Agency details
     And the the correct type of rates:

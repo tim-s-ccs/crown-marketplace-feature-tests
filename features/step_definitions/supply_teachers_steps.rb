@@ -412,7 +412,7 @@ Then('the sub title is Agency details') do
 end
 
 Then('I click on the first agency') do
-  supply_teachers_page.all_agencies.agencies.first.click
+  supply_teachers_page.all_agencies.agencies.first.find('a').click
 end
 
 Then('the branches are:') do |raw_branches|

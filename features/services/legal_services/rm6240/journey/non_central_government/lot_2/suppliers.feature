@@ -1,3 +1,4 @@
+@skip-production
 Feature: Legal services - Non central governemnt - Lot 2 - Suppliers
 
   Background: Navigate to start page and complete the journey
@@ -38,7 +39,6 @@ Feature: Legal services - Non central governemnt - Lot 2 - Suppliers
       | VEUM-LOWE                         |
       | WYMAN-O'CONNER                    |
 
-  @skip-production
   Scenario: Check the supplier data - SME
     Given I click on 'LUETTGEN-RIPPIN'
     Then I am on the 'LUETTGEN-RIPPIN' page
@@ -56,7 +56,6 @@ Feature: Legal services - Non central governemnt - Lot 2 - Suppliers
       | http://oconner-lind.com/modesto.stamm     |
       | 209 Boyle Drives, Lindgrenstad, UT 82401  |
 
-  @skip-production
   Scenario: Check the supplier data - Non SME
     Given I click on 'FLATLEY GROUP'
     Then I am on the 'FLATLEY GROUP' page

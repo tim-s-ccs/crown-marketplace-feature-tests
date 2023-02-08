@@ -26,6 +26,7 @@ Feature: Supply Teachers - Agency results - Fixed term - Validations - Productio
     Then I am on the 'Agency results' page
     And there are multiple agencies and I count them
 
+  @smoulder
   Scenario Outline: Annual salary validations
     And I enter the rate '<dayly_rate>' for supplier number 1
     Then I should see the error message 'Annual salary is invalid' for supplier number 1
@@ -50,6 +51,7 @@ Feature: Supply Teachers - Agency results - Fixed term - Validations - Productio
     And only the following suppliers should have errors:
       | |
 
+  @smoulder
   Scenario: Rate validations - multiple agencies
     And I enter the rate '-1' for supplier number 1
     And I enter the rate 'Sena' for supplier number 2

@@ -6,8 +6,12 @@ require 'capybara/cucumber'
 require 'capybara/rspec'
 require 'selenium-webdriver'
 require 'site_prism'
-require 'axe-capybara'
-require 'axe-cucumber-steps'
+
+if ENV.fetch('CUCUMBER_ACCESSIBILITY', nil)
+  require 'axe-capybara'
+  require 'axe-cucumber-steps'
+end
+
 require 'byebug'
 require 'active_support/all'
 
@@ -24,7 +28,13 @@ test_env = ENV.fetch('TEST_ENV', 'local')
 
 config_filename = "config/environment.#{test_env}.yml"
 
-raise Errno::ENOENT(config_filename) unless File.file?(config_filename)
+class MissingConfigFileError < StandardError
+  def initialize(missing_file_name)
+    super("Could not find config file with name: '#{missing_file_name}'")
+  end
+end
+
+raise MissingConfigFileError, config_filename unless File.file?(config_filename)
 
 config = YAML.load_file('config/environment.shared.yml')[test_env].merge(YAML.load_file("config/environment.#{test_env}.yml"))
 

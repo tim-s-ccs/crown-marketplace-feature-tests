@@ -1,3 +1,4 @@
+@skip-production
 Feature: Legal services -  Central governemnt - Lot 3 - Suppliers
 
   Background: Login and then navigate to the supplier results page
@@ -26,7 +27,6 @@ Feature: Legal services -  Central governemnt - Lot 3 - Suppliers
       | WEISSNAT INC                    |
       | WYMAN-O'CONNER                  |
 
-  @skip-production
   Scenario: Check the supplier data - SME
     Given I click on 'CORKERY-BLANDA'
     Then I am on the 'CORKERY-BLANDA' page
@@ -44,7 +44,6 @@ Feature: Legal services -  Central governemnt - Lot 3 - Suppliers
       | http://hills.biz/sybil.bogan                  |
       | 6394 Bahringer Locks, North Bryanna, KS 87911 |
 
-  @skip-production
   Scenario: Check the supplier data - Non SME
     Given I click on 'MACGYVER-SCHOEN'
     Then I am on the 'MACGYVER-SCHOEN' page

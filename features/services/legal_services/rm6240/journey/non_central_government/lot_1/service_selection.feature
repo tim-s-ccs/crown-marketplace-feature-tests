@@ -80,6 +80,7 @@ Feature: Legal services - Non central governemnt - Lot 1 - Service selection
       | Health, Healthcare and Social Care  |
       | Intellectual Property               |
 
+  @smoulder
   Scenario: Changing the selection will change the basket
     When I check the following items:
       | Children and Vulnerable Adults      |

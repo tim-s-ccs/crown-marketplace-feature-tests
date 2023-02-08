@@ -40,7 +40,7 @@ Feature: Supply Teachers - All agencies
       | STANTON, FADEL AND BOSCO      |
       | ZIEMANN-HERMANN               |
   
-  @skip-non-production
+  @skip-non-production @smoulder
   Scenario: All agencies search - Production
     And multiple agencies are shown and I count them
     And I enter "an" for the agency search

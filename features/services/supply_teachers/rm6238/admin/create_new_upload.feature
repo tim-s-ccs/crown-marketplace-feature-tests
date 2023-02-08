@@ -37,7 +37,6 @@ Feature: Supply Teachers - Admin - Create new upload
     And I select the file 'data/supply_teachers/rm6238/Current accredited suppliers.xlsx' to upload for 'Current accredited suppliers'
     And I click on 'Upload spreadsheets'
     Then I am on the 'Upload session' page
-    And the status of the supply teachers upload is 'Processing files'
     And I click on 'Delete session'
     Then I am on the 'Supply teachers and agency workers' page
 

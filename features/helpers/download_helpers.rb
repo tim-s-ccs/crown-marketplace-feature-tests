@@ -4,13 +4,13 @@ module DownloadHelpers
 
   class << self
     def downloads
-      Dir["#{PATH}/*"]
+      Dir["#{PATH}/*"].sort_by { |file| File.mtime(file) }
     end
 
     def download_file_name
       wait_for_download
 
-      File.basename(downloads.first)
+      File.basename(downloads.last)
     end
 
     def wait_for_download

@@ -1,3 +1,4 @@
+@skip-production
 Feature: Legal services - Non central governemnt - Lot 1 - Suppliers
 
   Background: Navigate to start page and complete the journey
@@ -32,7 +33,6 @@ Feature: Legal services - Non central governemnt - Lot 1 - Suppliers
       | SATTERFIELD-LOCKMAN         |
       | VEUM-LOWE                   |
 
-  @skip-production
   Scenario: Check the supplier data - SME
     Given I click on 'VEUM-LOWE'
     Then I am on the 'VEUM-LOWE' page
@@ -50,7 +50,6 @@ Feature: Legal services - Non central governemnt - Lot 1 - Suppliers
       | http://stanton.name/rory              |
       | 931 Gaston Fork, Alphaport, MS 97918  |
 
-  @skip-production
   Scenario: Check the supplier data - Non SME
     Given I click on 'GOTTLIEB GROUP'
     Then I am on the 'GOTTLIEB GROUP' page

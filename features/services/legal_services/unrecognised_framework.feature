@@ -12,6 +12,7 @@ Feature: Legal Services - Start pages - With an unrecognised framework
       | framework |
       | RM6240    |
 
+  @smoulder
   Scenario Outline: Go to unrecognised famework in the buyer section - logged out
     Given I sign in and navigate to the start page for the '<framework>' framework in 'legal services'
     And I go to the 'legal services' start page for 'RM0172'

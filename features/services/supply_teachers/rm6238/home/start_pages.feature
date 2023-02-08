@@ -10,6 +10,7 @@ Feature: Supply Teachers - Start pages
     When I click on 'Start now'
     Then I am on the 'Sign in to find supply teachers and agency workers' page
 
+  @smoulder
   Scenario: Logging in
     When I go to the 'supply teachers' start page for 'RM6238'
     Then I am on the 'Find supply teachers and agency workers' page
