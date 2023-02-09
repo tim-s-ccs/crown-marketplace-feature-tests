@@ -40,6 +40,8 @@ config = YAML.load_file('config/environment.shared.yml')[test_env].merge(YAML.lo
 
 ENV['BUYER_EMAIL']    ||= config['users']['buyer']['email']
 ENV['BUYER_PASSWORD'] ||= config['users']['buyer']['password']
+ENV['BUYER_NOT_DETAILS_EMAIL']    ||= config['users']['buyer_no_details']['email']
+ENV['BUYER_NOT_DETAILS_PASSWORD'] ||= config['users']['buyer_no_details']['password']
 ENV['ADMIN_EMAIL']    ||= config['users']['admin']['email']
 ENV['ADMIN_PASSWORD'] ||= config['users']['admin']['password']
 

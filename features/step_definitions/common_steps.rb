@@ -1,7 +1,11 @@
 Given('I sign in and navigate to the start page for the {string} framework in {string}') do |framework, service|
+  initialize_current_user(:buyer)
   start_page_title = ''
 
   case service
+  when 'facilities management'
+    start_page_title = current_user.email
+    visit "/facilities-management/#{framework}/sign-in"
   when 'legal services'
     start_page_title = 'Do you work for central government?'
     visit "/legal-services/#{framework}/sign-in"
@@ -14,14 +18,14 @@ Given('I sign in and navigate to the start page for the {string} framework in {s
   end
 
   update_banner_cookie(true)
-  fill_in 'email', with: ENV.fetch('BUYER_EMAIL', nil)
-  fill_in 'password', with: ENV.fetch('BUYER_PASSWORD', nil)
-  click_on 'Sign in'
+  step 'I sign in'
   step "I am on the '#{start_page_title}' page"
 end
 
 When('I go to the {string} start page for {string}') do |service, framework|
   case service
+  when 'facilities management'
+    visit "/facilities-management/#{framework}"
   when 'legal services'
     visit "/legal-services/#{framework}"
   when 'management consultancy'
@@ -32,9 +36,13 @@ When('I go to the {string} start page for {string}') do |service, framework|
 end
 
 Given('I sign in as an admin for the {string} framework in {string}') do |framework, service|
+  initialize_current_user(:admin)
   admin_dashboard_title = ''
 
   case service
+  when 'facilities management'
+    admin_dashboard_title = "#{framework} administration dashboard"
+    visit "/facilities-management/#{framework}/admin/sign-in"
   when 'legal services'
     admin_dashboard_title = 'Manage supplier data'
     visit "/legal-services/#{framework}/admin/sign-in"
@@ -47,9 +55,7 @@ Given('I sign in as an admin for the {string} framework in {string}') do |framew
   end
 
   update_banner_cookie(true)
-  fill_in 'email', with: ENV.fetch('ADMIN_EMAIL', nil)
-  fill_in 'password', with: ENV.fetch('ADMIN_PASSWORD', nil)
-  click_on 'Sign in'
+  step 'I sign in'
   step "I am on the '#{admin_dashboard_title}' page"
 end
 
@@ -72,8 +78,8 @@ When('I click on {string}') do |button_text|
 end
 
 Then('I sign in') do
-  fill_in 'email', with: ENV.fetch('BUYER_EMAIL', nil)
-  fill_in 'password', with: ENV.fetch('BUYER_PASSWORD', nil)
+  fill_in 'email', with: current_user.email
+  fill_in 'password', with: current_user.password
   click_on 'Sign in'
 end
 
