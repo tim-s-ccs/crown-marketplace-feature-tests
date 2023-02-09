@@ -11,10 +11,10 @@ Then('I am on the facilities management dashboard') do
   step "I am on the '#{current_user.email}' page"
 end
 
-Then('I can see the notification banner with text:') do |natification_banner_table|
-  header_text = natification_banner_table.raw.flatten[0]
-  content = natification_banner_table.raw.flatten[1..].join(' ')
+Then('I can see the notification banner with text:') do |notification_banner_table|
+  header_text = notification_banner_table.raw.flatten[0]
+  content = notification_banner_table.raw.flatten[1..].join(' ')
 
-  expect(facilities_management_page.natification_banner.header).to have_content(header_text)
-  expect(facilities_management_page.natification_banner.content).to have_content(content)
+  expect(facilities_management_page.notification_banner.header).to have_content(header_text)
+  expect(facilities_management_page.notification_banner.content).to have_content(content)
 end

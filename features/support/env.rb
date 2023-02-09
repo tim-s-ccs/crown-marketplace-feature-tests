@@ -45,6 +45,9 @@ ENV['BUYER_NOT_DETAILS_PASSWORD'] ||= config['users']['buyer_no_details']['passw
 ENV['ADMIN_EMAIL']    ||= config['users']['admin']['email']
 ENV['ADMIN_PASSWORD'] ||= config['users']['admin']['password']
 
+# Set a test ID to make sure names are uniq
+ENV['TEST_RUN_ID'] = SecureRandom.uuid
+
 # Set the Capybara config
 Capybara.app_host = config['host']
 

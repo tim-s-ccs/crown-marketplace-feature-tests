@@ -5,6 +5,7 @@ module Pages
 
     section :basket, '#css-list-basket' do
       elements :selection, 'ul > li > span'
+      elements :facilities_management_selection, 'ul > li > div:nth-of-type(2)'
       element :selection_count, 'div > h2'
       element :remove_all, '#removeAll'
     end
