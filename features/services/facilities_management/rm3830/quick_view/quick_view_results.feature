@@ -1,7 +1,9 @@
 Feature: Facilities Management - Quick view - Results
 
-  Background: Navigate to quick view results
+  Background: Sign in to Facilities Management RM3830
     Given I sign in and navigate to the start page for the 'RM3830' framework in 'facilities management'
+
+  Scenario: Correct selection on quick view results
     And I click on 'Quick view suppliers'
     Then I am on the 'Services' page
     And I show all sections
@@ -25,8 +27,6 @@ Feature: Facilities Management - Quick view - Results
       | Outer Belfast (Carrickfergus, Castlereagh, Lisburn, Newtownabbey, North Down) |
     And I click on 'Continue'
     And I am on the 'Quick view results' page
-
-  Scenario: Correct selection on quick view results
     Then 6 'services' are slected
     And the following 'services' are in the drop down:
       | High voltage (HV) and switchgear maintenance  |
@@ -44,8 +44,6 @@ Feature: Facilities Management - Quick view - Results
       | Gwynedd                                                                       |
       | East Lothian and Midlothian                                                   |
       | Outer Belfast (Carrickfergus, Castlereagh, Lisburn, Newtownabbey, North Down) |
-
-  Scenario: Hide and show requirements
     Then the requirements 'should' be visible
     And I click on 'Hide requirements'
     Then the requirements 'should not' be visible
@@ -53,16 +51,18 @@ Feature: Facilities Management - Quick view - Results
     Then the requirements 'should' be visible
 
   Scenario: Save and return goes to the dashboard
+    When I go to the quick search page for 'RM3830'
     Then I enter 'Colony 9 procurement' into the contract name field
     And I click on 'Save and return to procurements dashboard'
     Then I am on the 'Procurements dashboard' page
     And the procurement 'Colony 9 procurement' is on the dashboard
     And the procurement 'Colony 9 procurement' should have the state 'Quick view'
-    Then I click on 'Colony 9 procurement'
+    Then I click on the 'Colony 9 procurement' procurement
     And I am on the 'Quick view results' page
     And the contract name on the quick search results page is shown to be 'Colony 9 procurement'
 
   Scenario: Save and continue and then cancel
+    When I go to the quick search page for 'RM3830'
     Then I enter 'New LA contract' into the contract name field
     And I click on 'Save and continue to procurement'
     Then I am on the 'What happens next' page
@@ -70,11 +70,12 @@ Feature: Facilities Management - Quick view - Results
     Then I am on the 'Procurements dashboard' page
     And the procurement 'New LA contract' is on the dashboard
     And the procurement 'New LA contract' should have the state 'Quick view'
-    Then I click on 'New LA contract'
+    Then I click on the 'New LA contract' procurement
     And I am on the 'Quick view results' page
     And the contract name on the quick search results page is shown to be 'New LA contract'
 
   Scenario: Save and continue to entering requirements
+    When I go to the quick search page for 'RM3830'
     Then I enter 'Alba Cavanich search' into the contract name field
     And I click on 'Save and continue to procurement'
     Then I am on the 'What happens next' page
@@ -86,6 +87,7 @@ Feature: Facilities Management - Quick view - Results
     And the procurement 'Alba Cavanich search' should have the state 'Entering requirements'
 
   Scenario: Contract name and service selection saved in requirements
+    When I go to the quick search page for 'RM3830'
     Then I enter 'Mechonis field contract' into the contract name field
     And I click on 'Save and continue to procurement'
     Then I am on the 'What happens next' page

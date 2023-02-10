@@ -14,6 +14,10 @@ Then('the contract name is shown to be {string}') do |contract_name|
   expect(facilities_management_page.procurement.contract_name.text).to eq combine_contract_name_with_uuid(contract_name)
 end
 
+Then('I click on the {string} procurement') do |contract_name|
+  click_on combine_contract_name_with_uuid(contract_name)
+end
+
 Given('I have a procurement with the name {string}') do |contract_name|
   current_url_to_revisit = current_url
 

@@ -1,3 +1,7 @@
+When('I go to the quick search page for {string}') do |_framework|
+  visit '/facilities-management/RM3830/procurements/new?journey=facilities-management&region_codes%5B%5D=UKD4&region_codes%5B%5D=UKH3&region_codes%5B%5D=UKI3&region_codes%5B%5D=UKI4&region_codes%5B%5D=UKL12&region_codes%5B%5D=UKM23&region_codes%5B%5D=UKN02&service_codes%5B%5D=C.13&service_codes%5B%5D=E.2&service_codes%5B%5D=G.15&service_codes%5B%5D=H.3&service_codes%5B%5D=H.16&service_codes%5B%5D=J.5'
+end
+
 Then('I show all sections') do
   step('I click on "Show all sections"')
 end

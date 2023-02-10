@@ -19,42 +19,23 @@ Feature: Facilities Management - Quick view - Select regions
     And the following items should appear in the facilities management basket:
       | Tees Valley and Durham (UKC1) |
     When I check the following items:
-      | Lancashire                                                                    |
-      | Essex                                                                         |
-      | Inner London - West                                                           |
-      | Inner London - East                                                           |
-      | Gwynedd                                                                       |
-      | East Lothian and Midlothian                                                   |
-      | Outer Belfast (Carrickfergus, Castlereagh, Lisburn, Newtownabbey, North Down) |
-    Then the basket should say '8 regions selected'
-    And the remove all link should 'be' visible
-    And the following items should appear in the facilities management basket:
-      | Tees Valley and Durham (UKC1)                                                         |
-      | Lancashire (UKD4)                                                                     |
-      | Essex (UKH3)                                                                          |
-      | Inner London - West (UKI3)                                                            |
-      | Inner London - East (UKI4)                                                            |
-      | Gwynedd (UKL12)                                                                       |
-      | East Lothian and Midlothian (UKM23)                                                   |
-      | Outer Belfast (Carrickfergus, Castlereagh, Lisburn, Newtownabbey, North Down) (UKN02) |
-
-  Scenario: Changing the selection will change the basket
-    When I check the following items:
       | Essex                       |
       | Inner London - West         |
       | Inner London - East         |
       | Gwynedd                     |
       | East Lothian and Midlothian |
-    Then the basket should say '5 regions selected'
+    Then the basket should say '6 regions selected'
     And the remove all link should 'be' visible
     And the following items should appear in the facilities management basket:
+      | Tees Valley and Durham (UKC1)       |
       | Essex (UKH3)                        |
       | Inner London - West (UKI3)          |
       | Inner London - East (UKI4)          |
       | Gwynedd (UKL12)                     |
       | East Lothian and Midlothian (UKM23) |
     When I deselect the following items:
-      | Inner London - West |
+      | Tees Valley and Durham  |
+      | Inner London - West     |
     Then the basket should say '4 regions selected'
     And the remove all link should 'be' visible
     And the following items should appear in the facilities management basket:
@@ -72,8 +53,6 @@ Feature: Facilities Management - Quick view - Select regions
       | East Lothian and Midlothian (UKM23) |
     When I click on 'Remove all'
     Then the basket should say 'No regions selected'
-
-  Scenario: Select all checkbox
     When I select all for 'East of England'
     Then the basket should say '3 regions selected'
     And the remove all link should 'be' visible
@@ -86,19 +65,11 @@ Feature: Facilities Management - Quick view - Select regions
     Then select all 'should not' be checked for 'East of England'
     When I check 'Bedfordshire and Hertfordshire'
     Then select all 'should' be checked for 'East of England'
-
-  Scenario: Go back from regions and change selection
-    When I check the following items:
-      | Essex                       |
-      | Gwynedd                     |
-      | Inner London - East         |
-      | East Lothian and Midlothian |
     And I click on 'Continue'
     Then I am on the 'Quick view results' page
     And I click on the 'Return to regions' back link
     Then I am on the 'Regions' page
     And the following items should appear in the facilities management basket:
-      | Essex (UKH3)                        |
-      | Inner London - East (UKI4)          |
-      | Gwynedd (UKL12)                     |
-      | East Lothian and Midlothian (UKM23) |
+      | East Anglia (UKH1)                    |
+      | Bedfordshire and Hertfordshire (UKH2) |
+      | Essex (UKH3)                          |
