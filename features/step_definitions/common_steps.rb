@@ -1,56 +1,33 @@
+SERVICE_TO_START_PAGE_TITLE = {
+  'legal services' => 'Do you work for central government?',
+  'management consultancy' => 'Important changes to how you access Management Consultancy Framework Three',
+  'supply teachers' => 'What is your school looking for?'
+}.freeze
+
+SERVICE_TO_ADMIN_PAGE_TITLE = {
+  'legal services' => 'Manage supplier data',
+  'management consultancy' => 'Manage supplier data',
+  'supply teachers' => 'Supply teachers and agency workers'
+}.freeze
+
 Given('I sign in and navigate to the start page for the {string} framework in {string}') do |framework, service|
-  start_page_title = ''
-
-  case service
-  when 'legal services'
-    start_page_title = 'Do you work for central government?'
-    visit "/legal-services/#{framework}/sign-in"
-  when 'management consultancy'
-    start_page_title = 'Important changes to how you access Management Consultancy Framework Three'
-    visit "/management-consultancy/#{framework}/sign-in"
-  when 'supply teachers'
-    start_page_title = 'What is your school looking for?'
-    visit "/supply-teachers/#{framework}/sign-in"
-  end
-
+  visit "/#{service.gsub(' ', '-')}/#{framework}/sign-in"
   update_banner_cookie(true)
-  fill_in 'email', with: ENV.fetch('BUYER_EMAIL', nil)
-  fill_in 'password', with: ENV.fetch('BUYER_PASSWORD', nil)
-  click_on 'Sign in'
-  step "I am on the '#{start_page_title}' page"
+  step 'I sign in'
+  step "I am on the '#{SERVICE_TO_START_PAGE_TITLE.fetch(service)}' page"
 end
 
 When('I go to the {string} start page for {string}') do |service, framework|
-  case service
-  when 'legal services'
-    visit "/legal-services/#{framework}"
-  when 'management consultancy'
-    visit "/management-consultancy/#{framework}"
-  when 'supply teachers'
-    visit "/supply-teachers/#{framework}"
-  end
+  visit "/#{service.gsub(' ', '-')}/#{framework}"
 end
 
 Given('I sign in as an admin for the {string} framework in {string}') do |framework, service|
-  admin_dashboard_title = ''
-
-  case service
-  when 'legal services'
-    admin_dashboard_title = 'Manage supplier data'
-    visit "/legal-services/#{framework}/admin/sign-in"
-  when 'management consultancy'
-    admin_dashboard_title = 'Manage supplier data'
-    visit "/management-consultancy/#{framework}/admin/sign-in"
-  when 'supply teachers'
-    admin_dashboard_title = 'Supply teachers and agency workers'
-    visit "/supply-teachers/#{framework}/admin/sign-in"
-  end
-
+  visit "/#{service.gsub(' ', '-')}/#{framework}/admin/sign-in"
   update_banner_cookie(true)
-  fill_in 'email', with: ENV.fetch('ADMIN_EMAIL', nil)
-  fill_in 'password', with: ENV.fetch('ADMIN_PASSWORD', nil)
-  click_on 'Sign in'
-  step "I am on the '#{admin_dashboard_title}' page"
+  current_user(:admin)
+
+  step 'I sign in'
+  step "I am on the '#{SERVICE_TO_ADMIN_PAGE_TITLE.fetch(service)}' page"
 end
 
 When('I go to {string}') do |uri|
@@ -72,8 +49,8 @@ When('I click on {string}') do |button_text|
 end
 
 Then('I sign in') do
-  fill_in 'email', with: ENV.fetch('BUYER_EMAIL', nil)
-  fill_in 'password', with: ENV.fetch('BUYER_PASSWORD', nil)
+  fill_in 'email', with: current_user.email
+  fill_in 'password', with: current_user.password
   click_on 'Sign in'
 end
 
