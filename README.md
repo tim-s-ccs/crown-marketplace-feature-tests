@@ -1,6 +1,6 @@
-# Crown Marketplace Legacy - Feature tests
+# Crown Marketplace - Feature tests
 
-This repository contains feature tests for the [Crown Marketplace Legacy][] which can be run in non development environments.
+This repository contains feature tests for the [Crown Marketplace][] and [Crown Marketplace Legacy][] project which can be run in non development environments.
 
 This is a ruby project which uses [Cucumber][] BDD framework and [Capybara][] to run the tests.
 
@@ -141,13 +141,14 @@ Once you have pushed your changes, you should open a Pull Request on the main br
 
 Once all these have passed, and the PR has been reviewed and approved by another developer, you can merge the PR.
 
+[Crown Marketplace]: https://github.com/Crown-Commercial-Service/crown-marketplace-legacy
 [Crown Marketplace Legacy]: https://github.com/Crown-Commercial-Service/crown-marketplace-legacy
 [Cucumber]: https://cucumber.io/
 [Capybara]: https://github.com/teamcapybara/capybara
-[data folder]: https://github.com/tim-s-ccs/crown-marketplace-legacy-feature-tests/blob/main/data
+[data folder]: https://github.com/tim-s-ccs/crown-marketplace-feature-tests/blob/main/data
 [tags]: #profiles-and-tags
 [accessibility features]: #accessibility-features
 [Axe Cucumber]: https://www.deque.com/axe/
 [rubocop]: https://github.com/rubocop-hq/rubocop
 [rubocop-rspec]: https://github.com/rubocop-hq/rubocop-rspec
-[rubocop-yml]: https://github.com/tim-s-ccs/crown-marketplace-legacy-feature-tests/blob/main/.rubocop.yml
+[rubocop-yml]: https://github.com/tim-s-ccs/crown-marketplace-feature-tests/blob/main/.rubocop.yml
