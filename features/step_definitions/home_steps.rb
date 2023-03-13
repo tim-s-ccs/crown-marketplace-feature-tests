@@ -1,7 +1,7 @@
 Then('the cookie banner {string} visible') do |option|
   case option
   when 'is'
-    expect(page.find('#cookie-options-container')).to be_visible
+    expect(page.find_by_id('cookie-options-container')).to be_visible
   when 'is not'
     expect(page).not_to have_css('#cookie-options-container')
   end
@@ -10,10 +10,10 @@ end
 Then('the cookie banner shows I have {string} the cookies') do |option|
   case option
   when 'accepted'
-    expect(page).to have_css('#cookies-accepted-container', visible: true)
+    expect(page).to have_css('#cookies-accepted-container', visible: :visible)
     expect(page).to have_css('#cookies-rejected-container', visible: :hidden)
   when 'rejected'
-    expect(page).to have_css('#cookies-rejected-container', visible: true)
+    expect(page).to have_css('#cookies-rejected-container', visible: :visible)
     expect(page).to have_css('#cookies-accepted-container', visible: :hidden)
   end
 end
